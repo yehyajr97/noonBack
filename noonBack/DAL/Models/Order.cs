@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    class Order
+  public  class Order
     {
         public int Id { get; set; }
         public string State { get; set; }
@@ -16,7 +16,7 @@ namespace DAL.Models
         public int Discount { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
-        public virtual ApplicationUser user { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
     }
 }

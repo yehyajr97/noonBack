@@ -68,3 +68,5 @@ C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\SL.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\DAL.pdb
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\RepoL.pdb
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\SL.pdb
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Humanizer.dll
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

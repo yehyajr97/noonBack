@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    class Review
+    public class Review
     {
+        public int Id { get; set; }
         public string Commnet { get; set; }
 
         public virtual Product Product { get; set; }
