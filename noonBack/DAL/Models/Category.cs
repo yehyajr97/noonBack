@@ -9,10 +9,10 @@ namespace DAL.Models
     class Category
     {
         public int Id { get; set; }
-        public string CatName { get; set; }
+        public string Name { get; set; }
 
-        public ICollection<subCategory> SubCat { get; set; }
-        public ICollection<Brand> Brand { get; set; }
-        public ICollection<Product> Product { get; set; }
+        public virtual ICollection<subCategory> SubCategories { get; set; }
+        public virtual ICollection<Brand> Brands { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

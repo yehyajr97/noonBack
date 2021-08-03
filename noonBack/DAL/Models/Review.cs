@@ -10,6 +10,6 @@ namespace DAL.Models
     {
         public string Commnet { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

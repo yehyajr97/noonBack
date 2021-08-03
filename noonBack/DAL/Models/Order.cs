@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepoL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,13 @@ namespace DAL.Models
     {
         public int Id { get; set; }
         public string State { get; set; }
+        public string Date { get; set; }
+        public string Description { get; set; }
+        public int TotalPrice { get; set; }
+        public int Discount { get; set; }
 
-        public ICollection<Product> Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+        public virtual ApplicationUser user { get; set; }
 
     }
 }

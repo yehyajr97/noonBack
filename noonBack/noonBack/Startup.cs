@@ -28,6 +28,15 @@ namespace noonBack
         {
 
             services.AddControllers();
+
+
+            //Database Connection string
+            //services.AddDbContext<ApplicationDBContext>(options =>
+            //{
+            //    options.UseSqlServer(Configuration.GetConnectionString("CS"));
+            //});
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "noonBack", Version = "v1" });

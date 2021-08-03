@@ -9,10 +9,10 @@ namespace DAL.Models
     class Brand
     {
         public int Id { get; set; }
-        public string BrandName { get; set; }
+        public string Name { get; set; }
         public string LogoPath { get; set; }
 
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
 
 

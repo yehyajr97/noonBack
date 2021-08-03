@@ -11,6 +11,6 @@ namespace DAL.Models
         public int Id { get; set; }
         public string SubcatName { get; set; }
 
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

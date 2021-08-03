@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {}
+    "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {}
   },
   "projects": {
-    "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {
+    "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
+        "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
         "projectName": "RepoL",
-        "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
-        "packagesPath": "C:\\Users\\Yehya\\.nuget\\packages\\",
-        "outputPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\obj\\",
+        "projectPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Yehya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -54,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

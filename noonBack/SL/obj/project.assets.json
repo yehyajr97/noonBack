@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Yehya\\.nuget\\packages\\": {}
+    "C:\\Users\\hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\SL.csproj",
+      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\SL\\SL.csproj",
       "projectName": "SL",
-      "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\SL.csproj",
-      "packagesPath": "C:\\Users\\Yehya\\.nuget\\packages\\",
-      "outputPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\obj\\",
+      "projectPath": "C:\\Noon\\noonBack\\noonBack\\SL\\SL.csproj",
+      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Noon\\noonBack\\noonBack\\SL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Yehya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

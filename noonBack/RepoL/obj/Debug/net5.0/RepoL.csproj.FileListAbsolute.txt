@@ -1,0 +1,5 @@
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.csproj.AssemblyReference.cache
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.AssemblyInfoInputs.cache
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.AssemblyInfo.cs
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.csproj.CoreCompileInputs.cache
