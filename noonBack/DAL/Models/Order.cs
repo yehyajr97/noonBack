@@ -8,8 +8,7 @@ namespace DAL.Models
 {
     class Order
     {
-        public int User_id { get; set; }
-        public int Propduct_id { get; set; }
+        public int Id { get; set; }
         public string State { get; set; }
 
         public ICollection<Product> Product { get; set; }

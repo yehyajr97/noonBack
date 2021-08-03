@@ -8,7 +8,7 @@ namespace DAL.Models
 {
     class subCategory
     {
-        public int SubCatId { get; set; }
+        public int Id { get; set; }
         public string SubcatName { get; set; }
 
         public Category Category { get; set; }

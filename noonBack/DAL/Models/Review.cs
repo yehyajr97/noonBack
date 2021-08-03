@@ -8,8 +8,6 @@ namespace DAL.Models
 {
     class Review
     {
-        public int Product_id { get; set; }
-        public int User_id { get; set; }
         public string Commnet { get; set; }
 
         public Product Product { get; set; }
