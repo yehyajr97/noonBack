@@ -527,7 +527,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hp\\.nuget\\packages\\": {}
+    "C:\\Users\\mark\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -535,11 +535,11 @@
       "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
       "projectName": "RepoL",
       "projectPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
-      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\mark\\.nuget\\packages\\",
       "outputPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -585,7 +585,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

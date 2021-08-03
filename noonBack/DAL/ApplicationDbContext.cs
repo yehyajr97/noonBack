@@ -8,15 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepoL.Models
+namespace DAL
 {
-    class ApplicationUser : IdentityUser
+  public  class ApplicationUser : IdentityUser
     {
         public string Address1 { get; set; }
         public string Address2 { get; set; }
     }
 
-    class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+ public   class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DAL;
+
 
 namespace noonBack
 {
@@ -31,10 +34,10 @@ namespace noonBack
 
 
             //Database Connection string
-            //services.AddDbContext<ApplicationDBContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("CS"));
-            //});
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("CS"));
+            });
 
 
             services.AddSwaggerGen(c =>
