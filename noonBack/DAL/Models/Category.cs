@@ -8,7 +8,11 @@ namespace DAL.Models
 {
     class Category
     {
-        public int catId { get; set; }
-        public string catName { get; set; }
+        public int CatId { get; set; }
+        public string CatName { get; set; }
+
+        public ICollection<subCategory> SubCat { get; set; }
+        public ICollection<Brand> Brand { get; set; }
+        public ICollection<Product> Product { get; set; }
     }
 }

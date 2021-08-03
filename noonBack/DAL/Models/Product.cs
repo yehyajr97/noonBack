@@ -8,12 +8,17 @@ namespace DAL.Models
 {
     class Product
     {
-        public int productId { get; set; }
-        public int description { get; set; }
-        public string productName { get; set; }
-        public float price { get; set; }
-        public int stock { get; set; }
-        public int imgPath { get; set; }
+        public int ProductId { get; set; }
+        public int Description { get; set; }
+        public string ProductName { get; set; }
+        public float Price { get; set; }
+        public int Stock { get; set; }
+        public int ImgPath { get; set; }
+
+        public ICollection<Review> Review { get; set; }
+        public  Order Order { get; set; }
+        public Category Category { get; set; }
+
 
     }
 }

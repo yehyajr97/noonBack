@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    class Review
+    class Order
     {
-        public int Product_id { get; set; }
         public int User_id { get; set; }
-        public string Commnet { get; set; }
+        public int Propduct_id { get; set; }
+        public string State { get; set; }
 
-        public Product Product { get; set; }
+        public ICollection<Product> Product { get; set; }
+
     }
 }
