@@ -12,7 +12,7 @@ namespace DAL.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
-        public int discount { get; set; }
+        public int Discount { get; set; }
         public int Stock { get; set; }
         public string ImgPath { get; set; }
 
