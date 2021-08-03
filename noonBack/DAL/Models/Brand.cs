@@ -8,5 +8,11 @@ namespace DAL.Models
 {
     class Brand
     {
+        public int brandId { get; set; }
+        public string brandName { get; set; }
+        public string logoPath { get; set; }
+
+
+
     }
 }
