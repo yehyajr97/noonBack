@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SL.ReviewService
 {
-    class ReviewService : IReviewService
+   public class ReviewService : IReviewService
     {
         #region Property  
         private IRepository<Review> _repository;

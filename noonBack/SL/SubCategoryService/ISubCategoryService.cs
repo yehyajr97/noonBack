@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SL.SubCategoryService
 {
-    interface ISubCategoryService
+   public interface ISubCategoryService
     {
         IEnumerable<SubCategory> GetAllSubCategory();
         SubCategory GetSubCategory(int id);

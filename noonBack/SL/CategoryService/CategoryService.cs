@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SL.CategoryService
 {
-    class CategoryService : ICategoryService
+    public class CategoryService : ICategoryService
     {
         #region Property  
         private IRepository<Category> _repository;

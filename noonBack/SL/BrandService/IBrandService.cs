@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SL.BrandService
 {
-    interface IBrandService
+    public interface IBrandService
     {
         IEnumerable<Brand> GetAllBrands();
         Brand GetBrand(int id);

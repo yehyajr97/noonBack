@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SL.OrderService
 {
-    class OrderService : IOrderService
+    public class OrderService : IOrderService
     {
         #region Property  
         private IRepository<Order> _repository;

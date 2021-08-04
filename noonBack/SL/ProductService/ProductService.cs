@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SL.ProductService
 {
-    class ProductService : IProductService
+    public class ProductService : IProductService
     {
         #region Property  
         private IRepository<Product> _repository;

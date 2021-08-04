@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SL.OrderService
 {
-    interface IOrderService
+    public interface IOrderService
     {
         IEnumerable<Order> GetAllOrders();
         Order GetOrder(int id);

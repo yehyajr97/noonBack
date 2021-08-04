@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SL.CategoryService
 {
-    interface ICategoryService
+   public interface ICategoryService
     {
         IEnumerable<Category> GetAllCategory();
         Category GetCategory(int id);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SL.ReviewService
 {
-    interface IReviewService
+   public interface IReviewService
     {
         IEnumerable<Review> GetAllReviews();
         Review GetReview(int id);

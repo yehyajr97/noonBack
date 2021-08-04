@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SL.BrandService
 {
-    class BrandService : IBrandService
+    public class BrandService : IBrandService
     {
         #region Property  
         private IRepository<Brand> _repository;

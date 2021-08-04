@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAL.Models;
 namespace SL.ProductService
 {
-    interface IProductService
+  public  interface IProductService
     {
         IEnumerable<Product> GetAllProducts();
         Product GetProduct(int id);
