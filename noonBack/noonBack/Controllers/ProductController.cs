@@ -42,6 +42,53 @@ namespace noonBack.Controllers
             return BadRequest("No records found");
 
         }
+        [HttpGet]
+        [Route("name/{name}")]
+        public IActionResult GetProductsByName(string name)
+        {
+            var result = _productService.GetAllProducts().Where(c=>c.Name==name).ToList();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
+
+        }
+        [HttpGet]
+        [Route("Category/{CategoryName}")]
+        public IActionResult GetProductsByCategory(string CategoryName)
+        {
+            var result = _productService.GetAllProducts().Where(c => c.Category.Name == CategoryName).ToList();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
+        }
+        [HttpGet]
+        [Route("subCategory/{Category}/{brand}")]
+        public IActionResult GetProductsByBrand(string Category, string brand)
+        {
+            var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
+            var result = listByCategory.Where(c =>c.Category.Brands.FirstOrDefault().Name==brand).ToList();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
+        }
+        [HttpGet]
+        [Route("subCategory/{Category}/{subCategory}")]
+        public IActionResult GetProductsBySubCategory(string Category, string subCategory)
+        {
+            var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
+            var result = listByCategory.Where(c => c.Category.SubCategories.FirstOrDefault().SubcatName == subCategory).ToList();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
+        }
         [HttpPost]
         public IActionResult InsertProduct(Product product)
         {
