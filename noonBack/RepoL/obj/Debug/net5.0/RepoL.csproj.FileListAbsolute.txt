@@ -10,3 +10,6 @@ C:\Noon\noonBack\noonBack\RepoL\bin\Debug\net5.0\RepoL.pdb
 C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.dll
 C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\ref\RepoL.dll
 C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.pdb
+C:\Noon\noonBack\noonBack\RepoL\bin\Debug\net5.0\DAL.dll
+C:\Noon\noonBack\noonBack\RepoL\bin\Debug\net5.0\DAL.pdb
+C:\Noon\noonBack\noonBack\RepoL\obj\Debug\net5.0\RepoL.csproj.CopyComplete
