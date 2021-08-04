@@ -142,3 +142,13 @@ C:\Noon\noonBack\noonBack\noonBack\noonBack\obj\Debug\net5.0\scopedcss\bundle\no
 C:\Noon\noonBack\noonBack\noonBack\noonBack\obj\Debug\net5.0\noonBack.RazorTargetAssemblyInfo.cache
 C:\Noon\noonBack\noonBack\noonBack\noonBack\obj\Debug\net5.0\noonBack.csproj.CopyComplete
 C:\Noon\noonBack\noonBack\noonBack\noonBack\obj\Debug\net5.0\noonBack.genruntimeconfig.cache
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.csproj.AssemblyReference.cache
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.AssemblyInfoInputs.cache
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.AssemblyInfo.cs
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.csproj.CoreCompileInputs.cache
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.MvcApplicationPartsAssemblyInfo.cs
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.MvcApplicationPartsAssemblyInfo.cache
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.dll
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\ref\noonBack.dll
+C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.pdb
