@@ -23,6 +23,10 @@ namespace DAL
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
 
         DbSet<Brand> Brands { get; set; }
         DbSet<Category> Categories { get; set; }

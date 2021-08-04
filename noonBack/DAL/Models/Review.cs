@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Review
+    public class Review : BaseEntity
     {
         public int Id { get; set; }
         public string Commnet { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RepoL.Repository_pattern
 {
-    public class Repository<T> : IRepository<T> where T : Product
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         #region properties
         private readonly ApplicationDbContext _applicationDbContext;

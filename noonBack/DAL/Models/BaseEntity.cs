@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class SubCategory : BaseEntity
+   public class BaseEntity
     {
         public int Id { get; set; }
-        public string SubcatName { get; set; }
-
-        public virtual Category Category { get; set; }
     }
 }
