@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class subCategory
+    public class SubCategory
     {
         public int Id { get; set; }
         public string SubcatName { get; set; }
