@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace noonBack.ViewModels
 {
-    public class Register
+    public class RegisterModel
     {
         [Required]
         public string UserName { get; set; }
@@ -17,7 +17,7 @@ namespace noonBack.ViewModels
 
         [Required]
         [DataType(DataType.Password)]
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

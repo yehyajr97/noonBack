@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace noonBack.ViewModels
 {
-    public class Login
+    public class LoginModel
     {
         [Required]
         public string UserName { get; set; }
 
         [DataType(DataType.Password)]
         [Required]
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
     }
 }

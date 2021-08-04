@@ -20,6 +20,10 @@ using SL.OrderService;
 using SL.ProductService;
 using SL.ReviewService;
 using SL.SubCategoryService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
 
 namespace noonBack
 {
@@ -44,6 +48,8 @@ namespace noonBack
             {
                 options.UseSqlServer(Configuration.GetConnectionString("CS"));
             });
+
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<ICategoryService, CategoryService>();
@@ -51,6 +57,34 @@ namespace noonBack
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<ISubCategoryService, SubCategoryService>();
+
+            // For Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            // Adding Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+
+            // Adding Jwt Bearer
+            .AddJwtBearer(options =>
+            {
+                options.SaveToken = true;
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["JWT:ValidAudience"],
+                    ValidIssuer = Configuration["JWT:ValidIssuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                };
+            });
 
 
             services.AddSwaggerGen(c => 

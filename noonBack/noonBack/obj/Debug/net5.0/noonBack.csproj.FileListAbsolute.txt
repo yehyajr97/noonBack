@@ -44,7 +44,6 @@ C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.IdentityModel.Logg
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -152,3 +151,4 @@ C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.MvcApplicationPartsAssemblyI
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.dll
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\ref\noonBack.dll
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.pdb
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
