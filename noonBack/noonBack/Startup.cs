@@ -13,7 +13,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DAL;
-
+using RepoL.Repository_pattern;
+using SL.BrandService;
+using SL.CategoryService;
+using SL.OrderService;
+using SL.ProductService;
+using SL.ReviewService;
+using SL.SubCategoryService;
 
 namespace noonBack
 {
@@ -38,6 +44,13 @@ namespace noonBack
             {
                 options.UseSqlServer(Configuration.GetConnectionString("CS"));
             });
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IReviewService, ReviewService>();
+            services.AddTransient<ISubCategoryService, SubCategoryService>();
 
 
             services.AddSwaggerGen(c =>
