@@ -198,7 +198,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

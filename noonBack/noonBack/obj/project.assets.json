@@ -1664,6 +1664,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8"
         },
         "compile": {
