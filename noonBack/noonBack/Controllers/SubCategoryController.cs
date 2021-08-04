@@ -1,6 +1,7 @@
 ﻿using DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SL.SubCategoryService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace noonBack.Controllers
         [HttpGet]
         public IActionResult GetAllSubCategorys()
         {
-            var result = _subCategoryService.GetAllSubCategorys();
+            var result = _subCategoryService.GetAllSubCategory();
             if (result is not null)
             {
                 return Ok(result);

@@ -5878,19 +5878,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Yehya\\.nuget\\packages\\": {}
+    "C:\\Users\\mark\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
+      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
       "projectName": "RepoL",
-      "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
-      "packagesPath": "C:\\Users\\Yehya\\.nuget\\packages\\",
-      "outputPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\obj\\",
+      "projectPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj",
+      "packagesPath": "C:\\Users\\mark\\.nuget\\packages\\",
+      "outputPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Yehya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5904,8 +5904,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj"
+            "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj"
             }
           }
         }
@@ -5940,7 +5940,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

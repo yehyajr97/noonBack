@@ -44,3 +44,8 @@ C:\Noon\noonBack\SL\obj\Debug\net5.0\SL.csproj.CopyComplete
 C:\Noon\noonBack\SL\obj\Debug\net5.0\SL.dll
 C:\Noon\noonBack\SL\obj\Debug\net5.0\ref\SL.dll
 C:\Noon\noonBack\SL\obj\Debug\net5.0\SL.pdb
+C:\Noon\noonBack\noonBack\SL\bin\Debug\net5.0\DAL.dll
+C:\Noon\noonBack\noonBack\SL\bin\Debug\net5.0\RepoL.dll
+C:\Noon\noonBack\noonBack\SL\bin\Debug\net5.0\DAL.pdb
+C:\Noon\noonBack\noonBack\SL\bin\Debug\net5.0\RepoL.pdb
+C:\Noon\noonBack\noonBack\SL\obj\Debug\net5.0\SL.csproj.CopyComplete
