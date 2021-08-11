@@ -14,9 +14,9 @@ namespace DAL.Models
         public int Price { get; set; }
         public int Discount { get; set; }
         public int Stock { get; set; }
-        public string ImgPath { get; set; }
 
         public virtual ICollection<Review> Review { get; set; }
+        public virtual ICollection<ProductImages> ProductImages { get; set; }
         public virtual  Order Order { get; set; }
         public virtual Category Category { get; set; }
 

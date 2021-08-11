@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210810162314_okk")]
+    partial class okk
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -195,26 +197,6 @@ namespace DAL.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("products");
-                });
-
-            modelBuilder.Entity("DAL.Models.ProductImages", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("DAL.Models.Review", b =>
@@ -421,15 +403,6 @@ namespace DAL.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("DAL.Models.ProductImages", b =>
-                {
-                    b.HasOne("DAL.Models.Product", "Product")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("DAL.Models.Review", b =>
                 {
                     b.HasOne("DAL.Models.Product", "Product")
@@ -520,8 +493,6 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Models.Product", b =>
                 {
-                    b.Navigation("ProductImages");
-
                     b.Navigation("Review");
                 });
 #pragma warning restore 612, 618
