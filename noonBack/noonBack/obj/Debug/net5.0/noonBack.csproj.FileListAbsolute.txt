@@ -220,6 +220,3 @@ C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Fe
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\System.IO.Pipelines.dll
 >>>>>>> Stashed changes
-C:\Noon\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
-C:\Noon\noonBack\noonBack\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
-C:\Noon\noonBack\noonBack\bin\Debug\net5.0\System.IO.Pipelines.dll
