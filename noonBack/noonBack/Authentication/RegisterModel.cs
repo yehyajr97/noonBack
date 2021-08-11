@@ -21,7 +21,7 @@ namespace noonBack.ViewModels
 
         [Required]
         [DataType(DataType.Password)]
-        [Compare("PasswordHash")]
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
     }
 }

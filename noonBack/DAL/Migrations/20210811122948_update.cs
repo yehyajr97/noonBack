@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class up : Migration
+    public partial class update : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -213,7 +213,7 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "subCategory",
+                name: "SubCategory",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -223,9 +223,9 @@ namespace DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_subCategory", x => x.Id);
+                    table.PrimaryKey("PK_SubCategory", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_subCategory_Categories_CategoryId",
+                        name: "FK_SubCategory_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -349,8 +349,8 @@ namespace DAL.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_subCategory_CategoryId",
-                table: "subCategory",
+                name: "IX_SubCategory_CategoryId",
+                table: "SubCategory",
                 column: "CategoryId");
         }
 
@@ -378,7 +378,7 @@ namespace DAL.Migrations
                 name: "Reviews");
 
             migrationBuilder.DropTable(
-                name: "subCategory");
+                name: "SubCategory");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

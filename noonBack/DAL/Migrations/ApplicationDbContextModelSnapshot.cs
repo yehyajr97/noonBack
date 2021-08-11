@@ -220,7 +220,7 @@ namespace DAL.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("DAL.Models.subCategory", b =>
+            modelBuilder.Entity("DAL.Models.SubCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -237,7 +237,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("subCategory");
+                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -413,7 +413,7 @@ namespace DAL.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("DAL.Models.subCategory", b =>
+            modelBuilder.Entity("DAL.Models.SubCategory", b =>
                 {
                     b.HasOne("DAL.Models.Category", "Category")
                         .WithMany("SubCategories")

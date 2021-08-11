@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210803124210_up")]
-    partial class up
+    [Migration("20210811122948_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -222,7 +222,7 @@ namespace DAL.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("DAL.Models.subCategory", b =>
+            modelBuilder.Entity("DAL.Models.SubCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -239,7 +239,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("subCategory");
+                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -385,7 +385,7 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Models.Order", b =>
                 {
                     b.HasOne("DAL.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
@@ -415,7 +415,7 @@ namespace DAL.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("DAL.Models.subCategory", b =>
+            modelBuilder.Entity("DAL.Models.SubCategory", b =>
                 {
                     b.HasOne("DAL.Models.Category", "Category")
                         .WithMany("SubCategories")
@@ -473,6 +473,11 @@ namespace DAL.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DAL.ApplicationUser", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("DAL.Models.Category", b =>
