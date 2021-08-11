@@ -154,6 +154,7 @@ C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.pdb
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Noon\noonBack\noonBack\bin\Debug\net5.0\appsettings.Development.json
 C:\Noon\noonBack\noonBack\bin\Debug\net5.0\appsettings.json
 C:\Noon\noonBack\noonBack\bin\Debug\net5.0\noonBack.exe
@@ -216,6 +217,11 @@ C:\Noon\noonBack\noonBack\obj\Debug\net5.0\scopedcss\bundle\noonBack.styles.css
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.RazorTargetAssemblyInfo.cache
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.csproj.CopyComplete
 C:\Noon\noonBack\noonBack\obj\Debug\net5.0\noonBack.genruntimeconfig.cache
+=======
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\System.IO.Pipelines.dll
+>>>>>>> Stashed changes
 =======
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Noon\noonBack\noonBack\noonBack\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
