@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images\**" />
+    <Compile Remove="ViewModels\**" />
+    <Content Remove="images\**" />
+    <Content Remove="ViewModels\**" />
+    <EmbeddedResource Remove="images\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="images\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
@@ -25,11 +36,6 @@
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\RepoL\RepoL.csproj" />
     <ProjectReference Include="..\SL\SL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>
