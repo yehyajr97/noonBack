@@ -40,6 +40,11 @@ namespace noonBack
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
             services.AddControllers();
 
 
@@ -106,6 +111,7 @@ namespace noonBack
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 
             app.UseAuthentication();
