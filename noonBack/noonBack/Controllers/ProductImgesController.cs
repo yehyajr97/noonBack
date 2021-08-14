@@ -16,38 +16,38 @@ namespace noonBack.Controllers
     [ApiController]
     public class ProductImagesController : ControllerBase
     {
-        //private readonly IProductImagesService _productImagesService;
+        private readonly IProductImagesService _productImagesService;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
 
-        public ProductImagesController(IWebHostEnvironment hostingEnvironment)
+        public ProductImagesController(IProductImagesService productImagesService, IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
-            //_productImagesService = productImagesService;
+            _productImagesService = productImagesService;
         }
 
-        //[HttpGet("{id}")]
-        //public IActionResult GetProductImages(int id)
-        //{
-        //    var result = _productImagesService.GetProductImages(id);
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
+        [HttpGet("{id}")]
+        public IActionResult GetProductImages(int id)
+        {
+            var result = _productImagesService.GetProductImages(id);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
 
-        //}
-        //[HttpGet]
-        //public IActionResult GetAllProductImages()
-        //{
-        //    var result = _productImagesService.GetAllProductImages();
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
+        }
+        [HttpGet]
+        public IActionResult GetAllProductImages()
+        {
+            var result = _productImagesService.GetAllProductImages();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found");
 
-        //}
+        }
         [HttpPost]
         public string InsertProductImages([FromForm] ProductImages productImages)
         {
@@ -90,19 +90,19 @@ namespace noonBack.Controllers
             //return Ok("Data inserted");
 
         }
-        //[HttpPut]
-        //public IActionResult UpdateProductImages(ProductImages productImages)
-        //{
-        //    _productImagesService.UpdateProductImages(productImages);
-        //    return Ok("Updation done");
+        [HttpPut]
+        public IActionResult UpdateProductImages(ProductImages productImages)
+        {
+            _productImagesService.UpdateProductImages(productImages);
+            return Ok("Updation done");
 
-        //}
-        //[HttpDelete]
-        //public IActionResult DeleteProductImages(int Id)
-        //{
-        //    _productImagesService.DeleteProductImages(Id);
-        //    return Ok("Data Deleted");
+        }
+        [HttpDelete]
+        public IActionResult DeleteProductImages(int Id)
+        {
+            _productImagesService.DeleteProductImages(Id);
+            return Ok("Data Deleted");
 
-        //}
+        }
     }
 }
