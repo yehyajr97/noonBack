@@ -8,47 +8,47 @@ using System.Threading.Tasks;
 
 namespace SL.ProductImagesService
 {
-    public class ProductImagesService : IProductImagesService
-    {
-        #region Property  
-        private  IRepository<ProductImages> _repository;
-        #endregion
+    //public class ProductImagesService : IProductImagesService
+    //{
+    //    #region Property  
+    //    private  IRepository<ProductImages> _repository;
+    //    #endregion
 
-        #region Constructor  
-        public ProductImagesService(IRepository<ProductImages> repository)
-        {
-            _repository = repository;
-        }
-        #endregion
+    //    #region Constructor  
+    //    public ProductImagesService(IRepository<ProductImages> repository)
+    //    {
+    //        _repository = repository;
+    //    }
+    //    #endregion
 
-        public IEnumerable<ProductImages> GetAllProductImages()
-        {
-            return _repository.GetAll();
-        }
+    //    public IEnumerable<ProductImages> GetAllProductImages()
+    //    {
+    //        return _repository.GetAll();
+    //    }
 
-        public ProductImages GetProductImages(int id)
-        {
-            return _repository.Get(id);
-        }
+    //    public ProductImages GetProductImages(int id)
+    //    {
+    //        return _repository.Get(id);
+    //    }
 
-        public void InsertProductImages(ProductImages productImages)
-        {
-            _repository.Insert(productImages);
-        }
-        public void UpdateProductImages(ProductImages productImages)
-        {
-            _repository.Update(productImages);
-        }
+    //    public void InsertProductImages(ProductImages productImages)
+    //    {
+    //        _repository.Insert(productImages);
+    //    }
+    //    public void UpdateProductImages(ProductImages productImages)
+    //    {
+    //        _repository.Update(productImages);
+    //    }
 
-        public void DeleteProductImages(int id)
-        {
-            ProductImages productImages = GetProductImages(id);
-            _repository.Remove(productImages);
-            _repository.SaveChanges();
-        }
+    //    public void DeleteProductImages(int id)
+    //    {
+    //        ProductImages productImages = GetProductImages(id);
+    //        _repository.Remove(productImages);
+    //        _repository.SaveChanges();
+    //    }
 
        
-    }
+    //}
 
     
 }

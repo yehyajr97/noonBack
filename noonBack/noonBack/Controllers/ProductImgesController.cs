@@ -16,65 +16,93 @@ namespace noonBack.Controllers
     [ApiController]
     public class ProductImagesController : ControllerBase
     {
-        private readonly IProductImagesService _productImagesService;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        //private readonly IProductImagesService _productImagesService;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
 
-        public ProductImagesController(IProductImagesService productImagesService, IHostingEnvironment hostingEnvironment)
+        public ProductImagesController(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
-            _productImagesService = productImagesService;
+            //_productImagesService = productImagesService;
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetProductImages(int id)
-        {
-            var result = _productImagesService.GetProductImages(id);
-            if (result is not null)
-            {
-                return Ok(result);
-            }
-            return BadRequest("No records found");
+        //[HttpGet("{id}")]
+        //public IActionResult GetProductImages(int id)
+        //{
+        //    var result = _productImagesService.GetProductImages(id);
+        //    if (result is not null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest("No records found");
 
-        }
-        [HttpGet]
-        public IActionResult GetAllProductImages()
-        {
-            var result = _productImagesService.GetAllProductImages();
-            if (result is not null)
-            {
-                return Ok(result);
-            }
-            return BadRequest("No records found");
+        //}
+        //[HttpGet]
+        //public IActionResult GetAllProductImages()
+        //{
+        //    var result = _productImagesService.GetAllProductImages();
+        //    if (result is not null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest("No records found");
 
-        }
+        //}
         [HttpPost]
-        public async Task <IActionResult> InsertProductImages([FromForm]ProductImages productImages)
+        public string InsertProductImages([FromForm] ProductImages productImages)
         {
-            var a = _hostingEnvironment.WebRootPath;
-            var fileName = Path.GetFileName(productImages.Image.FileName);
-            var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "images", fileName);
-            using (var fileSteam = new FileStream(filePath, FileMode.Create))
+            try
             {
-                await productImages.Image.CopyToAsync(fileSteam);
+
+                if (productImages.Image.Length > 0)
+                {
+                    if (!Directory.Exists(_hostingEnvironment.WebRootPath + "\\upload\\"))
+                    {
+                        Directory.CreateDirectory(_hostingEnvironment.WebRootPath + "\\upload\\");
+                    }
+                    using (FileStream fileStream = System.IO.File.Create(_hostingEnvironment.WebRootPath + "\\upload\\" + productImages.Image.FileName))
+                    {
+                        productImages.Image.CopyTo(fileStream);
+                        fileStream.Flush();
+                        return "\\upload\\" + productImages.Image.FileName;
+                    }
+
+                }
+                else
+                {
+                    return "failed";
+                }
             }
-            productImages.ImagePath = filePath;
-            return Ok("Data inserted");
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
+
+            //var a = _hostingEnvironment.WebRootPath;
+            //var fileName = Path.GetFileName(productImages.Image.FileName);
+            //var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "images", fileName);
+            //using (var fileSteam = new FileStream(filePath, FileMode.Create))
+            //{
+            //    await productImages.Image.CopyToAsync(fileSteam);
+            //}
+            //productImages.ImagePath = filePath;
+            //return Ok("Data inserted");
 
         }
-        [HttpPut]
-        public IActionResult UpdateProductImages(ProductImages productImages)
-        {
-            _productImagesService.UpdateProductImages(productImages);
-            return Ok("Updation done");
+        //[HttpPut]
+        //public IActionResult UpdateProductImages(ProductImages productImages)
+        //{
+        //    _productImagesService.UpdateProductImages(productImages);
+        //    return Ok("Updation done");
 
-        }
-        [HttpDelete]
-        public IActionResult DeleteProductImages(int Id)
-        {
-            _productImagesService.DeleteProductImages(Id);
-            return Ok("Data Deleted");
+        //}
+        //[HttpDelete]
+        //public IActionResult DeleteProductImages(int Id)
+        //{
+        //    _productImagesService.DeleteProductImages(Id);
+        //    return Ok("Data Deleted");
 
-        }
+        //}
     }
 }

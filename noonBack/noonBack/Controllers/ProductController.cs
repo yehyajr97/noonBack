@@ -1,6 +1,7 @@
 ﻿using DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SL.CategoryService;
 using SL.ProductService;
 using System;
 using System.Collections.Generic;
@@ -55,40 +56,40 @@ namespace noonBack.Controllers
 
         }
         [HttpGet]
-        [Route("Category/{CategoryName}")]
-        public IActionResult GetProductsByCategory(string CategoryName)
+        [Route("Category/{CategoryId}")]
+        public IActionResult GetProductsByCategory(int CategoryId)
         {
-            var result = _productService.GetAllProducts().Where(c => c.Category.Name == CategoryName).ToList();
+            var result = _productService.GetAllProducts().Where(c => c.CategoryId == CategoryId).ToList();
             if (result is not null)
             {
                 return Ok(result);
             }
             return BadRequest("No records found");
         }
-        [HttpGet]
-        [Route("subCategory/{Category}/{brand}")]
-        public IActionResult GetProductsByBrand(string Category, string brand)
-        {
-            var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
-            var result = listByCategory.Where(c =>c.Category.Brands.FirstOrDefault().Name==brand).ToList();
-            if (result is not null)
-            {
-                return Ok(result);
-            }
-            return BadRequest("No records found");
-        }
-        [HttpGet]
-        [Route("subCategory/{Category}/{subCategory}")]
-        public IActionResult GetProductsBySubCategory(string Category, string subCategory)
-        {
-            var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
-            var result = listByCategory.Where(c => c.Category.SubCategories.FirstOrDefault().SubcatName == subCategory).ToList();
-            if (result is not null)
-            {
-                return Ok(result);
-            }
-            return BadRequest("No records found");
-        }
+        //[HttpGet]
+        //[Route("subCategory/{Category}/{brand}")]
+        //public IActionResult GetProductsByBrand(string Category, string brand)
+        //{
+        //    var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
+        //    var result = listByCategory.Where(c =>c.Category.Brands.FirstOrDefault().Name==brand).ToList();
+        //    if (result is not null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest("No records found");
+        //}
+        //[HttpGet]
+        //[Route("subCategory/{Category}/{subCategory}")]
+        //public IActionResult GetProductsBySubCategory(string Category, string subCategory)
+        //{
+        //    var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
+        //    var result = listByCategory.Where(c => c.Category.SubCategories.FirstOrDefault().SubcatName == subCategory).ToList();
+        //    if (result is not null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest("No records found");
+        //}
         [HttpPost]
         public IActionResult InsertProduct(Product product)
         {
