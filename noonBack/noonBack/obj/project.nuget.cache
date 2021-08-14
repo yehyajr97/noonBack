@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xlyy3+OVB2Qhq/u3dWLX6YFe8Zhz31XbIMCPtw7E4WQKM6M8poZc1VPf25UgVpQik+b3gRLzZEho6tHlgRXB9A==",
+  "dgSpecHash": "y8QIkb9bcgu2hlOlBCN21FL6j/ixoUxuOmNffSgkiDjMZgMhO40ix66j/9yXYC0aZjrJJeMtnMB7g6cXkEcKzg==",
   "success": true,
   "projectFilePath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\noonBack.csproj",
   "expectedPackageFiles": [
@@ -133,12 +133,5 @@
     "C:\\Users\\mark\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\mark\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Noon\\noonBack\\noonBack\\noonBack\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
