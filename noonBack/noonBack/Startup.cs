@@ -107,7 +107,6 @@ namespace noonBack
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "noonBack v1"));
-                app.UseHsts();
             }
             else
             {

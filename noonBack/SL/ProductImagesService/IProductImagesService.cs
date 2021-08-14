@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace SL.ProductImagesService
 {
-    //public interface IProductImagesService
-    //{
-    //    IEnumerable<ProductImages> GetAllProductImages();
-    //    ProductImages GetProductImages(int id);
-    //    void InsertProductImages(ProductImages productImages);
-    //    void UpdateProductImages(ProductImages productImages);
+    public interface IProductImagesService
+    {
+        IEnumerable<ProductImages> GetAllProductImages();
+        ProductImages GetProductImages(int id);
+        void InsertProductImages(ProductImages productImages);
+        void UpdateProductImages(ProductImages productImages);
 
-    //    void DeleteProductImages(int id);
+        void DeleteProductImages(int id);
 
-    //}
+    }
 }
