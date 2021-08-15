@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ProductImagesService\**" />
+    <EmbeddedResource Remove="ProductImagesService\**" />
+    <None Remove="ProductImagesService\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\RepoL\RepoL.csproj" />
   </ItemGroup>
