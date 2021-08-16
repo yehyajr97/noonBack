@@ -6161,19 +6161,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mark\\.nuget\\packages\\": {}
+    "C:\\Users\\Yehya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\SL\\SL.csproj",
+      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\SL.csproj",
       "projectName": "SL",
-      "projectPath": "C:\\Noon\\noonBack\\noonBack\\SL\\SL.csproj",
-      "packagesPath": "C:\\Users\\mark\\.nuget\\packages\\",
-      "outputPath": "C:\\Noon\\noonBack\\noonBack\\SL\\obj\\",
+      "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\SL.csproj",
+      "packagesPath": "C:\\Users\\Yehya\\.nuget\\packages\\",
+      "outputPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\SL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yehya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6187,11 +6187,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj"
+            "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj"
             },
-            "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {
-              "projectPath": "C:\\Noon\\noonBack\\noonBack\\RepoL\\RepoL.csproj"
+            "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj": {
+              "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\RepoL\\RepoL.csproj"
             }
           }
         }
@@ -6220,7 +6220,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

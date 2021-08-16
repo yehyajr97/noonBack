@@ -20,7 +20,6 @@ namespace DAL.Models
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public int SubCategoryId { get; set; }
-
         public virtual ICollection<Review> Review { get; set; }
         public virtual ICollection<ProductImages> ProductImages { get; set; }
         public virtual  Order Order { get; set; }
