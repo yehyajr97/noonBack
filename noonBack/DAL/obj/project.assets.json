@@ -6219,19 +6219,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Yehya\\.nuget\\packages\\": {}
+    "C:\\Users\\mark\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\Yehya\\.nuget\\packages\\",
-      "outputPath": "C:\\Noon\\noonBack\\noonBack\\noonBack\\DAL\\obj\\",
+      "projectPath": "C:\\Noon\\noonBack\\noonBack\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\mark\\.nuget\\packages\\",
+      "outputPath": "C:\\Noon\\noonBack\\noonBack\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Yehya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6309,7 +6309,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

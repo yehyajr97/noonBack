@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210816091324_saad")]
-    partial class saad
+    [Migration("20210816111002_mark")]
+    partial class mark
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

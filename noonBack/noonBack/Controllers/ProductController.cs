@@ -91,7 +91,6 @@ namespace noonBack.Controllers
 
         }
 
-
         [HttpPost]
         public IActionResult InsertProduct(Product product)
         {

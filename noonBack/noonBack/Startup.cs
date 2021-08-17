@@ -25,6 +25,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using SL.FileService;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace noonBack
 {
@@ -63,11 +67,19 @@ namespace noonBack
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<ISubCategoryService, SubCategoryService>();
+           services.AddTransient<IProductImagesService, ProductImagesService>();
 
             // For Identity
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            //adding static files
+            services.Configure<FormOptions>(o => {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
 
             // Adding Authentication
             services.AddAuthentication(options =>
@@ -76,6 +88,9 @@ namespace noonBack
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
+
+              
+
 
             // Adding Jwt Bearer
             .AddJwtBearer(options =>
@@ -108,17 +123,28 @@ namespace noonBack
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "noonBack v1"));
             }
-            else
-            {
-                app.UseHsts();
-            }
+           
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                 Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
+                RequestPath = "/Resources"
+            });
+            //Enable directory browsing
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                            Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
+                RequestPath = "/Resources"
+            });
 
             app.UseRouting();
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
-            app.UseStaticFiles();
+           
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -127,10 +153,10 @@ namespace noonBack
                 endpoints.MapControllers();
             });
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("could not find any thing ");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("could not find any thing ");
+            //});
         }
     }
 }
