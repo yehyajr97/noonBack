@@ -1,5 +1,4 @@
 ﻿using DAL.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Web;
@@ -8,6 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using SL.FileService;
+using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
+using SL.ProductService;
 
 namespace noonBack.Controllers
 {
@@ -15,93 +18,114 @@ namespace noonBack.Controllers
     [ApiController]
     public class ProductImagesController : ControllerBase
     {
-        //private readonly IProductImagesService _productImagesService;
-        private readonly IWebHostEnvironment _hostingEnvironment;
+        #region Property  
+        private readonly IProductImagesService _fileService;
+        private readonly IProductService _productService;
 
+        #endregion
 
-        public ProductImagesController( IWebHostEnvironment hostingEnvironment)
+        #region Constructor  
+        public ProductImagesController(IProductImagesService fileService, IProductService productService )
         {
-            _hostingEnvironment = hostingEnvironment;
-            //_productImagesService = productImagesService;
+            _fileService = fileService;
+            _productService = productService;
         }
+        #endregion
 
-        //[HttpGet("{id}")]
-        //public IActionResult GetProductImages(int id)
-        //{
-        //    var result = _productImagesService.GetProductImages(id);
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
-
-        //}
-        //[HttpGet]
-        //public IActionResult GetAllProductImages()
-        //{
-        //    var result = _productImagesService.GetAllProductImages();
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
-
-        //}
+        #region Upload  
         [HttpPost]
-        public string InsertProductImages([FromForm] ProductImages productImages)
+       
+        
+        public async Task<IActionResult> Upload()
         {
             try
             {
-
-                if (productImages.Image.Length > 0)
+                var formCollection = await Request.ReadFormAsync();
+                var file = formCollection.Files.First();
+                //file = Request.Form.Files[0];
+                var folderName = Path.Combine("Resources", "Images");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if (file.Length > 0)
                 {
-                    if (!Directory.Exists(_hostingEnvironment.WebRootPath + "\\upload\\"))
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
-                        Directory.CreateDirectory(_hostingEnvironment.WebRootPath + "\\upload\\");
-                    }
-                    using (FileStream fileStream = System.IO.File.Create(_hostingEnvironment.WebRootPath + "\\upload\\" + productImages.Image.FileName))
-                    {
-                        productImages.Image.CopyTo(fileStream);
-                        fileStream.Flush();
-                        return "\\upload\\" + productImages.Image.FileName;
+                        file.CopyTo(stream);
                     }
 
+                Product  Product=  _productService.GetAllProducts().OrderByDescending(x => x.Id).FirstOrDefault();
+                    ProductImages images = new ProductImages();
+                    images.ImagePath = dbPath;
+                    images.ProductId = Product.Id;
+                    InsertProductImage(images);
+                    return Ok(new { dbPath });
                 }
                 else
                 {
-                    return "failed";
+                    return BadRequest();
                 }
             }
             catch (Exception ex)
             {
-
-                return ex.Message.ToString();
+                return StatusCode(500, $"Internal server error: {ex}");
             }
-
-            //var a = _hostingEnvironment.WebRootPath;
-            //var fileName = Path.GetFileName(productImages.Image.FileName);
-            //var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "images", fileName);
-            //using (var fileSteam = new FileStream(filePath, FileMode.Create))
-            //{
-            //    await productImages.Image.CopyToAsync(fileSteam);
-            //}
-            //productImages.ImagePath = filePath;
-            //return Ok("Data inserted");
-
         }
-        //[HttpPut]
-        //public IActionResult UpdateProductImages(ProductImages productImages)
+        #endregion
+
+        //[HttpGet]
+        //public IActionResult Get()
         //{
-        //    _productImagesService.UpdateProductImages(productImages);
-        //    return Ok("Updation done");
+        //    var image = System.IO.File.OpenRead("Resources/Images/01.jpg");
+        //    return File(image, "image/jpeg");
+        //}
+
+        [HttpPost]
+        [Route("image")]
+        public IActionResult InsertProductImage(ProductImages productImages )
+        {
+           _fileService.InsertProductImage(productImages);
+            return Ok("data insarted");
+        }
+
+        [HttpGet]
+        [Route("getById /{id}")]
+        public IActionResult GetByProductId(int  id)
+        {
+            return Ok( _fileService.GetAll().Where(c => c.ProductId == id).Take(3));
+
+            //var image = System.IO.File.OpenRead("Resources/Images/01.jpg");
+            //return File(image, "image/jpeg");
+        }
+
+        [HttpGet]
+
+        public IActionResult GetAll()
+        {
+            return Ok(_fileService.GetAll());
+        }
+
+
+
+
+        //#region Download File  
+        //[HttpGet(nameof(Download))]
+        //public IActionResult Download([Required] string subDirectory)
+        //{
+
+        //    try
+        //    {
+        //        var (fileType, archiveData, archiveName) = _fileService.DownloadFiles(subDirectory);
+
+        //        return File(archiveData, fileType, archiveName);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
 
         //}
-        //[HttpDelete]
-        //public IActionResult DeleteProductImages(int Id)
-        //{
-        //    _productImagesService.DeleteProductImages(Id);
-        //    return Ok("Data Deleted");
-
-        //}
+        //#endregion
     }
 }

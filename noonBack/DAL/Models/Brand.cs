@@ -12,10 +12,9 @@ namespace DAL.Models
     {
         public string Name { get; set; }
         public string LogoPath { get; set; }
-        [Required]
-        public int CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
-        public virtual Category Category { get; set; }
+       
+        public virtual ICollection<Product>  Product { get; set; }
+
 
 
 

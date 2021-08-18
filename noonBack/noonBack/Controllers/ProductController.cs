@@ -66,30 +66,31 @@ namespace noonBack.Controllers
             }
             return BadRequest("No records found");
         }
-        //[HttpGet]
-        //[Route("subCategory/{Category}/{brand}")]
-        //public IActionResult GetProductsByBrand(string Category, string brand)
-        //{
-        //    var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
-        //    var result = listByCategory.Where(c =>c.Category.Brands.FirstOrDefault().Name==brand).ToList();
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
-        //}
-        //[HttpGet]
-        //[Route("subCategory/{Category}/{subCategory}")]
-        //public IActionResult GetProductsBySubCategory(string Category, string subCategory)
-        //{
-        //    var listByCategory = _productService.GetAllProducts().Where(c => c.Category.Name == Category).ToList();
-        //    var result = listByCategory.Where(c => c.Category.SubCategories.FirstOrDefault().SubcatName == subCategory).ToList();
-        //    if (result is not null)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest("No records found");
-        //}
+        [HttpGet]
+        [Route("brand/{BrandId}")]
+        public IActionResult GetProductByBrandId(int brandId)
+        {
+            var result = _productService.GetAllProducts().Where(c => c.BrandId == brandId);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("no records found");
+
+        }
+        [HttpGet]
+        [Route("SubCategory/{SubCategoryId}")]
+        public IActionResult GetProductBySubCategoryId(int SubCategoryId)
+        {
+            var result = _productService.GetAllProducts().Where(c => c.BrandId == SubCategoryId);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("no records found");
+
+        }
+
         [HttpPost]
         public IActionResult InsertProduct(Product product)
         {

@@ -6,12 +6,16 @@
 
   <ItemGroup>
     <Compile Remove="images\**" />
+    <Compile Remove="MyStaticFiles\**" />
     <Compile Remove="ViewModels\**" />
     <Content Remove="images\**" />
+    <Content Remove="MyStaticFiles\**" />
     <Content Remove="ViewModels\**" />
     <EmbeddedResource Remove="images\**" />
+    <EmbeddedResource Remove="MyStaticFiles\**" />
     <EmbeddedResource Remove="ViewModels\**" />
     <None Remove="images\**" />
+    <None Remove="MyStaticFiles\**" />
     <None Remove="ViewModels\**" />
   </ItemGroup>
 
@@ -29,7 +33,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Resources\Images\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
