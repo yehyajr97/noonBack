@@ -20,6 +20,7 @@ namespace DAL.Models
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public int SubCategoryId { get; set; }
+        public string SellerId { get; set; }
         public virtual ICollection<Review> Review { get; set; }
         public virtual ICollection<ProductImages> ProductImages { get; set; }
         public virtual  Order Order { get; set; }
@@ -29,6 +30,8 @@ namespace DAL.Models
         public virtual Brand Brand { get; set; }
         [ForeignKey("SubCategoryId")]
         public virtual SubCategory SubCategory { get; set; }
+        [ForeignKey("SellerId")]
+        public virtual ApplicationUser Seller { get; set; }
 
 
     }

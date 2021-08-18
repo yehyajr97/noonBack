@@ -47,12 +47,24 @@ namespace noonBack.Controllers
         [Route("name/{name}")]
         public IActionResult GetProductsByName(string name)
         {
-            var result = _productService.GetAllProducts().Where(c=>c.Name==name).ToList();
+            var result = _productService.GetAllProducts().Where(c=>c.Name.ToLower()==name.ToLower()).ToList();
             if (result is not null)
             {
                 return Ok(result);
             }
             return BadRequest("No records found");
+
+        }
+        [HttpGet]
+        [Route("Seller/{id}")]
+        public IActionResult GetProductsSellerId(string sellerId)
+        {
+            var result = _productService.GetAllProducts().Where(c => c.SellerId == sellerId).ToList();
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records found for this seller");
 
         }
         [HttpGet]

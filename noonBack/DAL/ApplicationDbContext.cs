@@ -12,12 +12,23 @@ namespace DAL
 {
   public  class ApplicationUser : IdentityUser
     {
+        public ICollection<ApplicationUserRole> UserRoles { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
+    public class ApplicationUserRole : IdentityUserRole<string>
+    {
+        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationRole Role { get; set; }
+    }
 
- public   class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationRole : IdentityRole
+    {
+        public ICollection<ApplicationUserRole> UserRoles { get; set; }
+    }
+
+    public   class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
