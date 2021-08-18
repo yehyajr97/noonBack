@@ -126,20 +126,20 @@ namespace noonBack
            
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                 Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
-                RequestPath = "/Resources"
-            });
-            //Enable directory browsing
-            app.UseDirectoryBrowser(new DirectoryBrowserOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                            Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
-                RequestPath = "/Resources"
-            });
+            //app.UseStaticFiles();
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //     Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
+            //    RequestPath = "/Resources"
+            //});
+            ////Enable directory browsing
+            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //                Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
+            //    RequestPath = "/Resources"
+            //});
 
             app.UseRouting();
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());

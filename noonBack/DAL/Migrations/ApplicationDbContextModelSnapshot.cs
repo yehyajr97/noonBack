@@ -203,7 +203,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("SubCategoryId");
 
-                    b.ToTable("products");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("DAL.Models.ProductImages", b =>
