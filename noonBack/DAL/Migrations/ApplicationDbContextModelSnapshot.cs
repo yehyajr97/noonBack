@@ -97,9 +97,6 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("LogoPath")
                         .HasColumnType("nvarchar(max)");
 
@@ -107,8 +104,6 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Brands");
                 });
@@ -168,6 +163,9 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -186,16 +184,26 @@ namespace DAL.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
+                    b.Property<int>("SubCategoryId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Products");
+                    b.HasIndex("SubCategoryId");
+
+                    b.ToTable("products");
                 });
 
             modelBuilder.Entity("DAL.Models.ProductImages", b =>
@@ -245,15 +253,10 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SubcatName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("SubCategory");
                 });
@@ -389,17 +392,6 @@ namespace DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("DAL.Models.Brand", b =>
-                {
-                    b.HasOne("DAL.Models.Category", "Category")
-                        .WithMany("Brands")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("DAL.Models.Order", b =>
                 {
                     b.HasOne("DAL.ApplicationUser", "User")
@@ -413,6 +405,12 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Models.Product", b =>
                 {
+                    b.HasOne("DAL.Models.Brand", "Brand")
+                        .WithMany("Product")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DAL.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
@@ -423,9 +421,19 @@ namespace DAL.Migrations
                         .WithMany("Products")
                         .HasForeignKey("OrderId");
 
+                    b.HasOne("DAL.Models.SubCategory", "SubCategory")
+                        .WithMany("Product")
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
                     b.Navigation("Category");
 
                     b.Navigation("Order");
+
+                    b.Navigation("SubCategory");
                 });
 
             modelBuilder.Entity("DAL.Models.ProductImages", b =>
@@ -448,17 +456,6 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("DAL.Models.SubCategory", b =>
-                {
-                    b.HasOne("DAL.Models.Category", "Category")
-                        .WithMany("SubCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -517,13 +514,14 @@ namespace DAL.Migrations
                     b.Navigation("Orders");
                 });
 
+            modelBuilder.Entity("DAL.Models.Brand", b =>
+                {
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("DAL.Models.Category", b =>
                 {
-                    b.Navigation("Brands");
-
                     b.Navigation("Products");
-
-                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("DAL.Models.Order", b =>
@@ -536,6 +534,11 @@ namespace DAL.Migrations
                     b.Navigation("ProductImages");
 
                     b.Navigation("Review");
+                });
+
+            modelBuilder.Entity("DAL.Models.SubCategory", b =>
+                {
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }
