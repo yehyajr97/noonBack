@@ -42,13 +42,15 @@ namespace noonBack.Controllers
 
                 var authClaims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Email, user.Email),
+                    //new Claim(ClaimTypes.Email, user.Email),
+                    new Claim("Email", user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
 
                 foreach (var userRole in userRoles)
                 {
-                    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                    authClaims.Add(new Claim("Role", userRole));
+                    //authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                 }
 
                 var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:key"]));
@@ -74,9 +76,9 @@ namespace noonBack.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            var emailExists = await userManager.FindByEmailAsync(model.Email);
-            if (emailExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Email already exists!" });
+            //var emailExists = await userManager.FindByEmailAsync(model.Email);
+            //if (emailExists != null)
+            //    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Email already exists!" });
 
             var userExists = await userManager.FindByNameAsync(model.UserName);
             if (userExists != null)
@@ -94,6 +96,16 @@ namespace noonBack.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Email creation failed! Please check Email details and try again." });
             }
+
+            if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+
+            if (await roleManager.RoleExistsAsync(UserRoles.User))
+            {
+                await userManager.AddToRoleAsync(user, UserRoles.User);
+            }
+
+
 
             return Ok(new Response { Status = "Success", Message = "Email created successfully!" });
         }
@@ -118,8 +130,7 @@ namespace noonBack.Controllers
 
             if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                 await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-            if (!await roleManager.RoleExistsAsync(UserRoles.User))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+            
 
             if (await roleManager.RoleExistsAsync(UserRoles.Admin))
             {
@@ -148,8 +159,6 @@ namespace noonBack.Controllers
 
             if (!await roleManager.RoleExistsAsync(UserRoles.Seller))
                 await roleManager.CreateAsync(new IdentityRole(UserRoles.Seller));
-            if (!await roleManager.RoleExistsAsync(UserRoles.User))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
             if (await roleManager.RoleExistsAsync(UserRoles.Seller))
             {
