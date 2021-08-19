@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using noonBack.Authentication;
@@ -130,7 +131,7 @@ namespace noonBack.Controllers
 
             if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                 await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-            
+
 
             if (await roleManager.RoleExistsAsync(UserRoles.Admin))
             {
@@ -166,6 +167,33 @@ namespace noonBack.Controllers
             }
 
             return Ok(new Response { Status = "Success", Message = "seller created successfully!" });
+
         }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var result = userManager.Users.Include(c => c.UserRoles).ThenInclude(d => d.Role).ToList();
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("no users yet");
+        }
+
+        [HttpDelete]
+        [Route("deleteUser/{email}")]
+        
+        public IActionResult Delete(string email)
+        {
+            var user = userManager.Users.FirstOrDefault(c => c.Email==email);
+           var result= userManager.DeleteAsync(user);
+            if (result != null)
+            {
+                return Ok("Deleted Successfully");
+            }
+            return BadRequest("Not found");
+        }
+
     }
 }
